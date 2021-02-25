@@ -1,4 +1,5 @@
 module.exports = {
+  basePath: '/m/dash',
   async rewrites() {
     return [
       {
@@ -8,6 +9,12 @@ module.exports = {
       {
         source: '/:path*',
         destination: `https://example.com/:path*`,
+        basePath: false,
+      },
+      {
+        source: '/',
+        destination: `https://example.com`,
+        basePath: false,
       },
     ]
   },
